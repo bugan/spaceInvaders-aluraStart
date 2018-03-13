@@ -1,6 +1,8 @@
 let imagemNave;
 let imagemAlien;
 
+let deslocamentoAlienX;
+
 function preload() {
     imagemNave = loadImage("imagens/Nave.png");
     imagemAlien = loadImage("imagens/Alien1.png");
@@ -8,10 +10,14 @@ function preload() {
 
 function setup() {
     createCanvas(900, 600);
+    deslocamentoAlienX = 0;
 }
 
 function draw() {
-        image(imagemNave, 450, 550);
-        image(imagemAlien, 450, 100);
+        background(100);
+
+        deslocamentoAlienX += 1;
+        image(imagemNave, mouseX, 500);
+        image(imagemAlien, deslocamentoAlienX, 100);
 }
 
